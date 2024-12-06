@@ -150,7 +150,7 @@ namespace CoreReactApp.Server.Migrations
                     { 198,"BOM", "Chhatrapati Shivaji Maharaj International Airport", "Mumbai, India" },
                     { 199,"DEL", "Indira Gandhi International Airport", "Delhi, India" },
                     { 855,"ZAG", "Zagreb Franjo Tudman Airport", "Zagreb, Croatia" },
-                    { 857,"DEL", "Split Airport", "Split, Croatia" }
+                    { 857,"SPU", "Split Airport", "Split, Croatia" }
                 });
         }
 
