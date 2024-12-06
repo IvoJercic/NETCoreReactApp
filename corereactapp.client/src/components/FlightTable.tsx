@@ -234,7 +234,7 @@ export default function FlightTable({ data }: FlightTableProps) {
                                     </CButton>
                                 </td>
                             ),
-                            details: (item: FlightDTO) => (
+                            details: (item) => (
                                 <CCollapse visible={details.includes(item.id)}>
                                     <CCardBody className="p-3">
                                         <h4>Flight Details</h4>
