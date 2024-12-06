@@ -183,7 +183,6 @@ export default function FlightTable({ data }: FlightTableProps) {
                 <>
                     <CSmartTable
                         activePage={1}
-                        clickableRows
                         columns={columns}
                         items={itemsToDisplay ?? []}
                         itemsPerPageSelect
@@ -235,14 +234,14 @@ export default function FlightTable({ data }: FlightTableProps) {
                                     </CButton>
                                 </td>
                             ),
-                            details: (item) => (
+                            details: (item: FlightDTO) => (
                                 <CCollapse visible={details.includes(item.id)}>
                                     <CCardBody className="p-3">
                                         <h4>Flight Details</h4>
 
                                         <div className="flight-details-container">
                                             <p className="flight-details">
-                                                <strong>Start:</strong> {item.startSourceIATA} to {item.startDestinationIATA} <br />
+                                                <strong>Start:</strong> {item.startSourceIATA} {item.startSourceLocation ?? ""} to {item.startDestinationIATA} {item.startDestinationLocation ?? ""}<br />
                                                 <strong>Departure Date:</strong> {formatDate(item.startDate)} <br />
                                                 <strong>Arrival Date:</strong> {formatDate(item.startArrivalDate)} <br />
                                                 <strong>Stops:</strong> {item.startNumberOfStops} {item.startNumberOfStops === 1 ? 'stop' : 'stops'} <br />
@@ -254,9 +253,9 @@ export default function FlightTable({ data }: FlightTableProps) {
                                                 <strong>Price:</strong> {item.currency} {item.price} <br />
                                             </p>
 
-                                            {item.endSourceIATA && item.endDestinationIATA && (
+                                            {item.endDate && (
                                                 <p className="flight-details">
-                                                    <strong>End:</strong> {item.endSourceIATA} to {item.endDestinationIATA} <br />
+                                                    <strong>End:</strong> {item.endSourceIATA} {item.startDestinationLocation ?? ""} to {item.endDestinationIATA} {item.startSourceLocation ?? ""}<br />
                                                     <strong>Return Date:</strong> {formatDate(item.endDate)} <br />
                                                     <strong>Return Arrival Date:</strong> {formatDate(item.endArrivalDate)} <br />
                                                     <strong>Return Stops:</strong> {item.endNumberOfStops ?? 0} {item.endNumberOfStops === 1 ? 'stop' : 'stops'} <br />
@@ -266,7 +265,6 @@ export default function FlightTable({ data }: FlightTableProps) {
                                         </div>
                                     </CCardBody>
                                 </CCollapse>
-
                             ),
                             add_to_favorites: (item: FlightDTO) => (
                                 <td>

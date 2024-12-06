@@ -10,8 +10,10 @@ namespace CoreReactApp.Server.Mappers
             return new FlightDTO
             {
                 Id = flight.FlightId,
-                StartSourceIATA = flight.Source?.IATACode, 
+                StartSourceIATA = flight.Source?.IATACode,
+                StartSourceLocation = flight.Source.Location,
                 StartDestinationIATA = flight.Destination?.IATACode,
+                StartDestinationLocation = flight.Destination?.Location,
                 EndSourceIATA = flight.Destination?.IATACode,
                 EndDestinationIATA = flight.Source?.IATACode,
                 StartDate = flight.StartDate,

@@ -5,7 +5,9 @@
         public int Id { get; set; }
 
         public string? StartSourceIATA { get; set; }
+        public string? StartSourceLocation { get; set; }
         public string? StartDestinationIATA { get; set; }
+        public string? StartDestinationLocation { get; set; }
         public string? EndSourceIATA { get; set; }
         public string? EndDestinationIATA { get; set; }
 

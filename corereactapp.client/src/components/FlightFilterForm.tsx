@@ -193,7 +193,7 @@ export default function FlightFilterForm() {
 
             <div className="form-bottom">
                 <div className="mb-4">
-                    <CFormLabel htmlFor={FieldIds.passengers}>Passengers</CFormLabel>
+                    <CFormLabel htmlFor={FieldIds.passengers}>Passengers</CFormLabel>*
                     <CFormInput
                         id={FieldIds.passengers}
                         type="number"
@@ -201,6 +201,7 @@ export default function FlightFilterForm() {
                         onChange={handleInputChange}
                         className="form-input"
                         min={0}
+                        required
                     />
                 </div>
 

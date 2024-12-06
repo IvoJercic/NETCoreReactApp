@@ -1,7 +1,9 @@
 export interface FlightDTO {
     id: number;
     startSourceIATA: string;
+    startSourceLocation: string;
     startDestinationIATA: string;
+    startDestinationLocation: string;
     startDate: string;
     startArrivalDate: string;
     startNumberOfStops: number;
