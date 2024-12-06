@@ -35,11 +35,11 @@ CoreReactApp\\CoreReactApp.Server\\appsettings.json or CoreReactApp\\CoreReactAp
 
 Add your SQL Server connection string under the ConnectionStrings section:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   "ConnectionStrings": {    "DefaultConnection": "Server=;Database=;Trusted_Connection=True;TrustServerCertificate=True;"  }   `
+"ConnectionStrings": {    "DefaultConnection": "Server=<YOUR_SQL_SERVER>;Database=<DATABASE_NAME>;Trusted_Connection=True;TrustServerCertificate=True;"  }   `
 
-*   Replace with your SQL Server instance address.
+*   Replace  <YOUR_SQL_SERVER> with your SQL Server instance address.
     
-*   Replace with the name of the database you'd like to use (it will be created automatically due to code-first principle).
+*   Replace <DATABASE_NAME> with the name of the database you'd like to use (it will be created automatically due to code-first principle).
     
 
 ### 3\. Add Amadeus API Credentials
@@ -51,15 +51,15 @@ You’ll need an **Amadeus API account** to fetch flight data.
 
 Add these credentials to your appsettings.Development.json file:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   "AmadeusAPI": {    "ApiKey": "",    "ApiSecret": ""  }   `
+"AmadeusAPI": {    "ApiKey": "<API_KEY>",    "ApiSecret": "<API_SECRET>"  }   `
 
-Replace and with the credentials you received from Amadeus.
+Replace <API_KEY> and <API_SECRET> with the credentials you received from Amadeus.
 
 ### 4\. Update the Database
 
 Open the **Package Manager Console** in Visual Studio and run the following command to apply database migrations:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   update-database   `
+update-database   `
 
 This will set up the necessary database tables using Entity Framework's code-first approach.
 
@@ -76,6 +76,6 @@ Now, you’re ready to run the app!
 
 You can use the following **IATA airport codes** for testing flight data in the app:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   SPU, ZAG, ATL, PEK, LAX, DXB, HND, ORD, LHR, CDG, DFW, DEN, SIN, AMS, ICN, BKK, HKG, JFK, KUL, FRA, IST, GRU, MIA, SYD, YVR, YYZ, MUC, SFO, SEA, LAS, PHX, MCO, IAH, BOS, MAD, BCN, GIG, DEL, BOM, JNB, CPT, CAI, DOH, MEX, EZE, ZRH, DUB, BRU, ARN, HEL, OSL, CPH, VIE, PRG, WAW, LIS, LED, DME, SVO, TPE, MNL, BNE, ADL, AKL, CHC, DPS, CGK, HAN, SGN, KIX, CTS, NRT, GVA, NCE, VCE, FCO, MXP, NAP, ATH, SKG, BLL, GOT, BUD, OTP, SOF, TBS, EVN, GYD, ALA, CCU, BLR, HYD, MAA, KTM, DAC, CMB, MLE, JED, RUH, DMM, AMM, TLV, BEY, AUH, SHJ, KWI, BAH, MCT, ISB, LHE, KHI, PNQ, GOI, TRV, COK, IXC, GAU, IXB, PAT, VNS, JAI, AMD, BDQ, IDR, BHO, NAG, RPR, VGA, IXR, IXT, JMU, SLV, IXD, SXR, IXA, BOM   `
+SPU, ZAG, ATL, PEK, LAX, DXB, HND, ORD, LHR, CDG, DFW, DEN, SIN, AMS, ICN, BKK, HKG, JFK, KUL, FRA, IST, GRU, MIA, SYD, YVR, YYZ, MUC, SFO, SEA, LAS, PHX, MCO, IAH, BOS, MAD, BCN, GIG, DEL, BOM, JNB, CPT, CAI, DOH, MEX, EZE, ZRH, DUB, BRU, ARN, HEL, OSL, CPH, VIE, PRG, WAW, LIS, LED, DME, SVO, TPE, MNL, BNE, ADL, AKL, CHC, DPS, CGK, HAN, SGN, KIX, CTS, NRT, GVA, NCE, VCE, FCO, MXP, NAP, ATH, SKG, BLL, GOT, BUD, OTP, SOF, TBS, EVN, GYD, ALA, CCU, BLR, HYD, MAA, KTM, DAC, CMB, MLE, JED, RUH, DMM, AMM, TLV, BEY, AUH, SHJ, KWI, BAH, MCT, ISB, LHE, KHI, PNQ, GOI, TRV, COK, IXC, GAU, IXB, PAT, VNS, JAI, AMD, BDQ, IDR, BHO, NAG, RPR, VGA, IXR, IXT, JMU, SLV, IXD, SXR, IXA, BOM   `
 
 Simply input any of these IATA codes into the app to retrieve flight data.
