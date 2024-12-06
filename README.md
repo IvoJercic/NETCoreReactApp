@@ -1,4 +1,4 @@
-CoreReactApp
+NETCoreReactApp
 ============
 
 Overview
